@@ -32,7 +32,7 @@ const Camera = () => {
         const formData = new FormData();
         formData.append("image", blob, "photo.png");
 
-        const backendUrl = import.meta.env.VITE_BACKEND_URL || "https://colorpicker-76dk.onrender.com/"; // Fallback to local URL
+        const backendUrl = import.meta.env.VITE_BACKEND_URL || "https://colorpicker-76dk.onrender.com"; // Fallback to local URL
         console.log("Backend URL:", backendUrl);
 
         await fetch(`${backendUrl}/upload`, {
