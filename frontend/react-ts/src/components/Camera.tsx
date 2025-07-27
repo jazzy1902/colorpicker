@@ -32,9 +32,12 @@ const Camera = () => {
         const formData = new FormData();
         formData.append("image", blob, "photo.png");
 
-        await fetch("http://localhost:8000/upload", {
-            method: "POST",
-            body: formData,
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        console.log("Backend URL:", backendUrl);
+
+        await fetch(`${backendUrl}/upload`, {
+        method: 'POST',
+        body: formData,
         });
 
         alert("Photo sent to backend!");
